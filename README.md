@@ -15,6 +15,7 @@ payment processing.
 * [Cleverbug](https://github.com/cleverbug) - Upgrade to consume Adyen's endpoints V18
 
 ## Milestones
+* 2.30.0cts - instituted CTS-local version of woki project, updated for v30 and recurringProcessingModel. This branch is not intended as a source for pulling code back to woki, but rather for creating local artifacts. See details in PAYMENT-704.
 * 2.25.1 - Fixed URIs for v25.
 * 2.25.0 - Updated to cover Adyen's endpoints new version, v25.
 * 2.18.1 - Bug fixes; code rationalizations; tests correctness; replaced boon's JSON ObjectMapper w/ Jackson's to properly handle atypical collections
