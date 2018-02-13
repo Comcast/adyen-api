@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class PaymentController {
-    @RequestMapping(value = {"/pal/servlet/Payment/v25/authorise", "/pal/servlet/Payment/v25/authorise3d"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/pal/servlet/Payment/v30/authorise", "/pal/servlet/Payment/v30/authorise3d"}, method = RequestMethod.POST)
     public ResponseEntity<PaymentResponse> authorize(@RequestBody PaymentRequest request) {
         PaymentResponse res = new PaymentResponse();
         if ("gimme_500".equals(request.getReference())) {

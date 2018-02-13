@@ -53,6 +53,7 @@ public class PaymentRequest implements Serializable {
     private Map<String, String> metadata = new HashMap<>();
     private String orderReference;
     private Recurring recurring;
+    private String recurringProcessingModel;
     private String reference;
     private String selectedBrand;
     private String selectedRecurringDetailReference;
@@ -82,6 +83,22 @@ public class PaymentRequest implements Serializable {
         }
     }
 
+    // allowed values for the recurringProcessingModel field
+    public enum ProcessingModel {
+        SUBSCRIPTION( "Subscription"),
+        CARDONFILE("CardOnFile");
+
+        private final String modelName;
+
+        ProcessingModel(String s) {
+            modelName = s;
+        }
+
+        public String toString() {
+            return this.modelName;
+        }
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE)
@@ -107,6 +124,7 @@ public class PaymentRequest implements Serializable {
                 .append("orderReference", orderReference)
                 .append("paResponse", paResponse)
                 .append("recurring", recurring)
+                .append("recurringProcessingModel", recurringProcessingModel)
                 .append("reference", reference)
                 .append("selectedBrand", selectedBrand)
                 .append("selectedRecurringDetailReference", selectedRecurringDetailReference)
